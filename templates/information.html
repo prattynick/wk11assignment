@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Employee Information</title>
+	</head>
+	<body>
+		<h1>Employee Information</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>EmpID</th>
+					<th>EmpName</th>
+					<th>EmpGender</th>
+					<th>EmpPhone</th>
+					<th>EmpBdate</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for employee in employee %}
+				<tr>
+					<td>{{ employee['EmpID'] }}</td>
+					<td>{{ employee['EmpName'] }}</td>
+					<td>{{ employee['EmpGender'] }}</td>
+					<td>{{ employee['EmpPhone'] }}</td>
+					<td>{{ employee['EmpBdate'] }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
+</html>

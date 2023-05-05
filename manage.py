@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import sqlite3
-
+import mysql.connector as sql
 
 app = Flask(__name__, template_folder='templates')
 
@@ -36,6 +36,13 @@ def information():
 	employee = c.fetchall()
 	conn.close()
 	return render_template('information.html', employee=employee)
+
+with sql.connect(host="localhost", \
+		 user="flask", \
+		 password="buddy710", \
+		 database="employee_db") as con:
+   cur = con.cursor()
+
 
 
 if __name__ == '__main__':
